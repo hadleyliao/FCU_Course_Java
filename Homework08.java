@@ -29,14 +29,14 @@ public class Homework08 {
         // 萬一性別輸入錯誤還是會要被要求輸入身高，要最後才判別性別輸入錯誤，邏輯很奇怪...所以應該要先判斷性別是否輸入正確
         */
 
-        System.out.println("請輸入性別代號，0 代表女性，1 代表男性:");
+        System.out.print("請輸入性別代號，0 代表女性，1 代表男性: ");
         Scanner sc = new Scanner(System.in);
         int gender = sc.nextInt();
         // 先檢查性別是否有效
         if (gender != 0 && gender != 1) {
-            System.out.println("輸入錯誤，請重新輸入性別之代號");
+            System.out.print("輸入錯誤，請重新輸入性別之代號");
         } else {
-            System.out.println("請輸入身高（cm）:");
+            System.out.print("請輸入身高（cm）: ");
             int height = sc.nextInt();
 
             double SW; // 使用 double 儲存浮點數結果
