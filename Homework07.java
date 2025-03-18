@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class Homework07 {
     public static void main(String[] args) {
+        /*
+        // 把加減乘除改為數字代號
         System.out.print("請輸入第一個數字: ");
         Scanner sc = new Scanner(System.in);
         int n1 = sc.nextInt();
@@ -25,10 +27,39 @@ public class Homework07 {
             if (n2 == 0) { // 除數為0
                 System.out.println("輸入錯誤，除數不能為 0");
             } else {
-                System.out.println("相除結果: "+((float)n1/n2)); // 相除可能會有小數點產生，前面加上(float)強制轉型成浮點數，確保結果有小數
+                System.out.println("相除結果: "+((double)n1/n2)); // 相除可能會有小數點產生，前面加上(double)強制轉型成浮點數，確保結果有小數
             }
         } else {
             System.out.println("輸入錯誤，請重新輸入四則運算之代號");
         }
+        */
+
+
+
+        // 直接用加減乘除
+        System.out.print("請輸入第一個數字: ");
+        Scanner sc = new Scanner(System.in);
+        int n1 = sc.nextInt();
+        System.out.print("請輸入第二個數字: ");
+        int n2 = sc.nextInt();
+        System.out.print("要進行哪一個四則運算? 加、減、乘、除: ");
+        String operation = sc.next(); // Java 中應該使用 next() 或 nextLine() 來讀取字串
+
+        if(operation.equals("加")){  // 加 // Java 中，字串比較不能使用 ===，應改為 .equals()
+            System.out.println("相加結果: "+(n1+n2));
+        }else if(operation.equals("減")){ // 減
+            System.out.println("相減結果: "+(n1-n2));
+        }else if(operation.equals("乘")){ // 乘
+            System.out.println("相乘結果: "+(n1*n2));
+        }else if(operation.equals("除")){ // 除
+            if (n2 == 0) { // 除數為0
+                System.out.println("輸入錯誤，除數不能為 0");
+            } else {
+                System.out.println("相除結果: "+((double)n1/n2)); // 相除可能會有小數點產生，前面加上(double)強制轉型成浮點數，確保結果有小數
+            }
+        } else {
+            System.out.println("輸入錯誤，請重新輸入四則運算");
+        }
+        sc.close(); // 關閉 Scanner，避免資源浪費
     }
 }
